@@ -19,6 +19,7 @@ from std_msgs.msg import Float32
 import board
 import adafruit_lis3dh
 
+
 class MinimalPublisher(Node):
 
     def __init__(self):
