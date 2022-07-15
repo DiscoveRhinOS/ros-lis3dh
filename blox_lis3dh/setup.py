@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'blox_lis3dh_publisher'
+package_name = 'blox_lis3dh'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                'blox_lis3dh = blox_lis3dh.publisher_member_function:main',
+                'blox_lis3dh_publisher = blox_lis3dh.publisher_member_function:main',
         ],
     },
 )
