@@ -34,4 +34,4 @@ jobs:
           push: true
           build-args: |
             ROS_DISTRO=humble
-          tags: ghcr.io/rosblox/ros:humble-lis3dh
+          tags: ghcr.io/rosblox/ros-lis3dh:humble
