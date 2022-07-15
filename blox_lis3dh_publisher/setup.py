@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'accelerometer_publisher'
+package_name = 'blox_lis3dh_publisher'
 
 setup(
     name=package_name,
@@ -13,14 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='ubuntu',
-    maintainer_email='ubuntu@todo.todo',
+    maintainer='rosblox',
+    maintainer_email='info@rosblox.com',
     description='TODO: Package description',
-    license='TODO: License declaration',
+    license='BSD3',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                'talker = accelerometer_publisher.publisher_member_function:main',
+                'blox_lis3dh = blox_lis3dh.publisher_member_function:main',
         ],
     },
 )
