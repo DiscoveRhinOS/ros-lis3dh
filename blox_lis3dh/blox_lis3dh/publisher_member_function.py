@@ -39,7 +39,6 @@ class BloxLis3dhPublisher(Node):
         msg.vector.x = x
         msg.vector.y = y
         msg.vector.z = z
-        print(msg)
         self.publisher_.publish(msg)
 
 
