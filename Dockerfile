@@ -8,7 +8,7 @@ RUN pip3 install adafruit-circuitpython-lis3dh
 
 WORKDIR /colcon_ws/src
 
-COPY blox_lis3dh .
+COPY ros_lis3dh .
 
 WORKDIR /colcon_ws
 

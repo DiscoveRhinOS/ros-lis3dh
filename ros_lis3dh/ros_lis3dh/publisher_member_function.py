@@ -21,13 +21,13 @@ import board
 import adafruit_lis3dh
 
 
-class BloxLis3dhPublisher(Node):
+class RosLis3dhPublisher(Node):
 
     def __init__(self):
-        super().__init__('blox_lis3dh_publisher')
+        super().__init__('ros_lis3dh_publisher')
         self.i2c = board.I2C()
         self.lis3dh = adafruit_lis3dh.LIS3DH_I2C(self.i2c)
-        self.publisher_ = self.create_publisher(Vector3Stamped, 'blox_lis3dh/data', 10)
+        self.publisher_ = self.create_publisher(Vector3Stamped, 'lis3dh/data', 10)
         timer_period = 0.2  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -35,7 +35,7 @@ class BloxLis3dhPublisher(Node):
         x, y, z = self.lis3dh.acceleration
         msg = Vector3Stamped()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = "blox_lis3dh"
+        msg.header.frame_id = "ros_lis3dh"
         msg.vector.x = x
         msg.vector.y = y
         msg.vector.z = z
@@ -45,14 +45,14 @@ class BloxLis3dhPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    blox_lis3dh_publisher = BloxLis3dhPublisher()
+    ros_lis3dh_publisher = RosLis3dhPublisher()
 
-    rclpy.spin(blox_lis3dh_publisher)
+    rclpy.spin(ros_lis3dh_publisher)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    blox_lis3dh_publisher.destroy_node()
+    ros_lis3dh_publisher.destroy_node()
     rclpy.shutdown()
 
 
