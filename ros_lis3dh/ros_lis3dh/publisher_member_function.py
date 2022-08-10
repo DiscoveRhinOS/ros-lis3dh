@@ -28,7 +28,7 @@ class RosLis3dhPublisher(Node):
         self.i2c = board.I2C()
         self.lis3dh = adafruit_lis3dh.LIS3DH_I2C(self.i2c)
         self.publisher_ = self.create_publisher(Vector3Stamped, 'lis3dh/data', 10)
-        timer_period = 0.002  # seconds
+        timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
