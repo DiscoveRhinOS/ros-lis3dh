@@ -12,7 +12,7 @@ COPY ros_lis3dh .
 
 WORKDIR /colcon_ws
 
-RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install
 
 WORKDIR /
 
