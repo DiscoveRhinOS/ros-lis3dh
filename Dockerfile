@@ -17,3 +17,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install
 WORKDIR /
 
 COPY ros_entrypoint.sh .
+
+RUN echo 'alias build="colcon build --cmake-args --symlink-install  --event-handlers console_direct+"' >> ~/.bashrc
+RUN echo 'alias run="ros2 run ros_lis3dh ros_lis3dh_publisher"' >> ~/.bashrc
